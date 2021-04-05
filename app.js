@@ -28,7 +28,7 @@ let seatle = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -46,7 +46,7 @@ let seatle = {
         {
             let listItem=document.createElement('li');
             unorderedL.appendChild(listItem);
-            listItem.textContent=`${hours[i]} : ${this.randomCustomer[i]} : cookies`;
+            listItem.textContent=`${hours[i]} : ${this.randomAverage[i]} : cookies`;
             
         }
         let totalOfLi=document.createElement('li');
@@ -83,7 +83,7 @@ let tokyo = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -102,7 +102,7 @@ let tokyo = {
         {
             let listItem=document.createElement('li');
             unorderedL.appendChild(listItem);
-            listItem.textContent=(`${hours[i]} : ${this.randomCustomer[i]} : cookies`);
+            listItem.textContent=(`${hours[i]} : ${this.randomAverage[i]} : cookies`);
             console.log(listItem);
         }
         let totalOfLi=document.createElement('li');
@@ -139,7 +139,7 @@ let dubai = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -157,7 +157,7 @@ let dubai = {
         {
             let listItem=document.createElement('li');
             unorderedL.appendChild(listItem);
-            listItem.textContent=`${hours[i]} : ${this.randomCustomer[i]} : cookies`;
+            listItem.textContent=`${hours[i]} : ${this.randomAverage[i]} : cookies`;
             
         }
         let totalOfLi=document.createElement('li');
@@ -176,7 +176,7 @@ let paris = {
     name:'paris',
     minCustomer: 20, 
     maxCustomer: 38,
-    avgCookieSale: 23, 
+    avgCookieSale: 2.3, 
     randomCustomer: [], 
     randomAverage: [],
     total: 0,
@@ -194,7 +194,7 @@ let paris = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -213,7 +213,7 @@ let paris = {
         {
             let listItem=document.createElement('li');
             unorderedL.appendChild(listItem);
-            listItem.textContent=(`${hours[i]} : ${this.randomCustomer[i]} : cookies`);
+            listItem.textContent=(`${hours[i]} : ${this.randomAverage[i]} : cookies`);
             console.log(listItem);
         }
         let totalOfLi=document.createElement('li');
@@ -249,7 +249,7 @@ let lima = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
