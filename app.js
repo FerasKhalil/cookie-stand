@@ -7,174 +7,282 @@ function randomNumber(min, max) {
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 let seatle = {
-    minCustomer: 23, maxCustomer: 65, avgCookieSale: 6.3, randomCustomer: [], randomAverage: [],
+    name:'seatle',
+    minCustomer: 23, 
+    maxCustomer: 65,
+    avgCookieSale: 6.3, 
+    randomCustomer: [],    
+    randomAverage: [],
+    total:0,
     customerRandom: function ()
     {
         for (let i = 0; i < hours.length; i++)
         {
-            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer) + ' hourly customers');
+            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer));
         }
-        console.log(this.randomCustomer);
+        
     },
     avgCookies: function ()
     {
-        for (let i = 0; i < hours.length; i++)
-        {
-             this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
+        for (let i = 0; i < this.randomCustomer.length; i++)
+        {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
+            multiply=Math.floor(multiply);
+            this.randomAverage.push(multiply);
+            this.total=this.total+this.randomCustomer[i];
+        //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
-        console.log(this.randomAverage);
-    },
-    seatleTotal:function()
-    {   let total=0;
-        for (let i=0; i<hours.length;i++)
-        {
-            total=total+Math.floor(this.randomAverage[i]);
-            console.log(hours+":"+total);
-        }
-        console.log('total='+this.total);
         
+    },
+    render: function()
+    {
+        let parent=document.getElementById('parent');
+        console.log(parent);
+        let header3=document.createElement('h3');
+        parent.appendChild(header3);
+        header3.textContent=this.name;
+        let unorderedL=document.createElement('ul');
+        parent.appendChild(unorderedL);
+        for( let i=0; i<hours.length; i++)
+        {
+            let listItem=document.createElement('li');
+            unorderedL.appendChild(listItem);
+            listItem.textContent=`${hours[i]} : ${this.randomCustomer[i]} : cookies`;
+            
+        }
+        let totalOfLi=document.createElement('li');
+        unorderedL.appendChild(totalOfLi);
+        totalOfLi.textContent=`total : ${this.total}`;
     }
-}
+};
+
 //  +' the average is: ' +randomNumber(Math.floor(this.minCustomer*this.avgCookieSale),Math.floor(this.maxCustomer*this.avgCookieSale)
 seatle.customerRandom();
 seatle.avgCookies();
-seatle.seatleTotal();
-
+seatle.render();
+// seatle.seatleTotal();
 
 let tokyo = {
-    minCustomer: 3, maxCustomer: 24, avgCookieSale: 1.2, randomCustomer: [], randomAverage: [],
+    name:'tokyo',
+    minCustomer: 3, 
+    maxCustomer: 24,
+    avgCookieSale: 1.2, 
+    randomCustomer: [], 
+    randomAverage: [],
+    total: 0,
     customerRandom: function ()
     {
         for (let i = 0; i < hours.length; i++)
         {
-            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer) + ' hourly customers');
+            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer));
         }
         console.log(this.randomCustomer);
     },
     avgCookies: function ()
     {
-        for (let i = 0; i < hours.length; i++)
-        {
-             this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
+        for (let i = 0; i < this.randomCustomer.length; i++)
+        {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
+            multiply=Math.floor(multiply);
+            this.randomAverage.push(multiply);
+            this.total=this.total+this.randomCustomer[i];
+        //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
-        console.log(this.randomAverage);
-    },
-    seatleTotal:function()
-    {   let total=0;
-        for (let i=0; i<hours.length;i++)
-        {
-            total=total+Math.floor(this.randomAverage[i]);
-            console.log(hours+":"+total);
-        }
-        console.log('total='+this.total);
         
+    },
+    
+    render:function()
+    {
+        let parent=document.getElementById('parent');
+        console.log(parent);
+        let header3=document.createElement('h3');
+        parent.appendChild(header3);
+        header3.textContent=this.name;
+        let unorderedL=document.createElement('ul');
+        parent.appendChild(unorderedL);
+        for( let i=0;i<hours.length;i++)
+        {
+            let listItem=document.createElement('li');
+            unorderedL.appendChild(listItem);
+            listItem.textContent=(`${hours[i]} : ${this.randomCustomer[i]} : cookies`);
+            console.log(listItem);
+        }
+        let totalOfLi=document.createElement('li');
+        unorderedL.appendChild(totalOfLi);
+        totalOfLi.textContent=(`total:${this.total}`);
     }
 }
+
+//  +' the average is: ' +randomNumber(Math.floor(this.minCustomer*this.avgCookieSale),Math.floor(this.maxCustomer*this.avgCookieSale)
 tokyo.customerRandom();
 tokyo.avgCookies();
-tokyo.seatleTotal();
+tokyo.render();
 
 
 let dubai = {
-    minCustomer: 11, maxCustomer: 38, avgCookieSale: 3.7, randomCustomer: [], randomAverage: [],
+    name:'dubai',
+    minCustomer: 11, 
+    maxCustomer: 38,
+    avgCookieSale: 3.7, 
+    randomCustomer: [],    
+    randomAverage: [],
+    total:0,
     customerRandom: function ()
     {
         for (let i = 0; i < hours.length; i++)
         {
-            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer) + ' hourly customers');
+            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer));
         }
-        console.log(this.randomCustomer);
+        
     },
     avgCookies: function ()
     {
-        for (let i = 0; i < hours.length; i++)
-        {
-             this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
+        for (let i = 0; i < this.randomCustomer.length; i++)
+        {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
+            multiply=Math.floor(multiply);
+            this.randomAverage.push(multiply);
+            this.total=this.total+this.randomCustomer[i];
+        //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
-        console.log(this.randomAverage);
-    },
-    seatleTotal:function()
-    {   let total=0;
-        for (let i=0; i<hours.length;i++)
-        {
-            total=total+Math.floor(this.randomAverage[i]);
-            console.log(hours+":"+total);
-        }
-        console.log('total='+this.total);
         
+    },
+    render: function()
+    {
+        let parent=document.getElementById('parent');
+        console.log(parent);
+        let header3=document.createElement('h3');
+        parent.appendChild(header3);
+        header3.textContent=this.name;
+        let unorderedL=document.createElement('ul');
+        parent.appendChild(unorderedL);
+        for( let i=0; i<hours.length; i++)
+        {
+            let listItem=document.createElement('li');
+            unorderedL.appendChild(listItem);
+            listItem.textContent=`${hours[i]} : ${this.randomCustomer[i]} : cookies`;
+            
+        }
+        let totalOfLi=document.createElement('li');
+        unorderedL.appendChild(totalOfLi);
+        totalOfLi.textContent=`total : ${this.total}`;
     }
-}
+};
+
+//  +' the average is: ' +randomNumber(Math.floor(this.minCustomer*this.avgCookieSale),Math.floor(this.maxCustomer*this.avgCookieSale)
 dubai.customerRandom();
 dubai.avgCookies();
-dubai.seatleTotal();
-
+dubai.render();
+// seatle.seatleTotal();
 
 let paris = {
-    minCustomer: 20, maxCustomer: 38, avgCookieSale: 2.3, randomCustomer: [], randomAverage: [],
+    name:'paris',
+    minCustomer: 20, 
+    maxCustomer: 38,
+    avgCookieSale: 23, 
+    randomCustomer: [], 
+    randomAverage: [],
+    total: 0,
     customerRandom: function ()
     {
         for (let i = 0; i < hours.length; i++)
         {
-            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer) + ' hourly customers');
+            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer));
         }
         console.log(this.randomCustomer);
     },
     avgCookies: function ()
     {
-        for (let i = 0; i < hours.length; i++)
-        {
-             this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
+        for (let i = 0; i < this.randomCustomer.length; i++)
+        {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
+            multiply=Math.floor(multiply);
+            this.randomAverage.push(multiply);
+            this.total=this.total+this.randomCustomer[i];
+        //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
-        console.log(this.randomAverage);
-    },
-    seatleTotal:function()
-    {   let total=0;
-        for (let i=0; i<hours.length;i++)
-        {
-            total=total+Math.floor(this.randomAverage[i]);
-            console.log(hours+":"+total);
-        }
-        console.log('total='+this.total);
         
+    },
+    
+    render:function()
+    {
+        let parent=document.getElementById('parent');
+        console.log(parent);
+        let header3=document.createElement('h3');
+        parent.appendChild(header3);
+        header3.textContent=this.name;
+        let unorderedL=document.createElement('ul');
+        parent.appendChild(unorderedL);
+        for( let i=0;i<hours.length;i++)
+        {
+            let listItem=document.createElement('li');
+            unorderedL.appendChild(listItem);
+            listItem.textContent=(`${hours[i]} : ${this.randomCustomer[i]} : cookies`);
+            console.log(listItem);
+        }
+        let totalOfLi=document.createElement('li');
+        unorderedL.appendChild(totalOfLi);
+        totalOfLi.textContent=(`total:${this.total}`);
     }
 }
+
+//  +' the average is: ' +randomNumber(Math.floor(this.minCustomer*this.avgCookieSale),Math.floor(this.maxCustomer*this.avgCookieSale)
 paris.customerRandom();
 paris.avgCookies();
-paris.seatleTotal();
-
+paris.render();
 
 let lima = {
-    minCustomer: 2, maxCustomer: 16, avgCookieSale: 4.6, randomCustomer: [], randomAverage: [],
+    name:'lima',
+    minCustomer: 20, 
+    maxCustomer: 38,
+    avgCookieSale: 23, 
+    randomCustomer: [], 
+    randomAverage: [],
+    total: 0,
     customerRandom: function ()
     {
         for (let i = 0; i < hours.length; i++)
         {
-            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer) + ' hourly customers');
+            this.randomCustomer.push(randomNumber(this.minCustomer, this.maxCustomer));
         }
         console.log(this.randomCustomer);
     },
     avgCookies: function ()
     {
-        for (let i = 0; i < hours.length; i++)
-        {
-             this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
+        for (let i = 0; i < this.randomCustomer.length; i++)
+        {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
+            multiply=Math.floor(multiply);
+            this.randomAverage.push(multiply);
+            this.total=this.total+this.randomCustomer[i];
+        //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
-        console.log(this.randomAverage);
-    },
-    seatleTotal:function()
-    {   let total=0;
-        for (let i=0; i<hours.length;i++)
-        {
-            total=total+Math.floor(this.randomAverage[i]);
-            console.log(hours+":"+total);
-        }
-        console.log('total='+this.total);
         
+    },
+    
+    render:function()
+    {
+        let parent=document.getElementById('parent');
+        console.log(parent);
+        let header3=document.createElement('h3');
+        parent.appendChild(header3);
+        header3.textContent=this.name;
+        let unorderedL=document.createElement('ul');
+        parent.appendChild(unorderedL);
+        for( let i=0;i<hours.length;i++)
+        {
+            let listItem=document.createElement('li');
+            unorderedL.appendChild(listItem);
+            listItem.textContent=(`${hours[i]} : ${this.randomCustomer[i]} : cookies`);
+            console.log(listItem);
+        }
+        let totalOfLi=document.createElement('li');
+        unorderedL.appendChild(totalOfLi);
+        totalOfLi.textContent=(`total:${this.total}`);
     }
 }
+
+//  +' the average is: ' +randomNumber(Math.floor(this.minCustomer*this.avgCookieSale),Math.floor(this.maxCustomer*this.avgCookieSale)
 lima.customerRandom();
 lima.avgCookies();
-lima.seatleTotal();
+lima.render();
+// seatle.seatleTotal();
+
 
 /*let tokyo = {
     minCustomer: 3, maxCustomer: 24, avgCookieSale: 1.2, randomCustomer: [], randomAverage: [],
