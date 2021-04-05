@@ -4,8 +4,13 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+
+
+
+
+/*
 let seatle = {
     name:'seatle',
     minCustomer: 23, 
@@ -282,7 +287,7 @@ lima.customerRandom();
 lima.avgCookies();
 lima.render();
 // seatle.seatleTotal();
-
+*/
 
 /*let tokyo = {
     minCustomer: 3, maxCustomer: 24, avgCookieSale: 1.2, randomCustomer: [], randomAverage: [],
