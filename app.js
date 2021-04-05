@@ -4,13 +4,8 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-
-
-
-
-/*
 let seatle = {
     name:'seatle',
     minCustomer: 23, 
@@ -33,7 +28,7 @@ let seatle = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -51,7 +46,7 @@ let seatle = {
         {
             let listItem=document.createElement('li');
             unorderedL.appendChild(listItem);
-            listItem.textContent=`${hours[i]} : ${this.randomCustomer[i]} : cookies`;
+            listItem.textContent=`${hours[i]} : ${this.randomAverage[i]} : cookies`;
             
         }
         let totalOfLi=document.createElement('li');
@@ -88,7 +83,7 @@ let tokyo = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -107,7 +102,7 @@ let tokyo = {
         {
             let listItem=document.createElement('li');
             unorderedL.appendChild(listItem);
-            listItem.textContent=(`${hours[i]} : ${this.randomCustomer[i]} : cookies`);
+            listItem.textContent=(`${hours[i]} : ${this.randomAverage[i]} : cookies`);
             console.log(listItem);
         }
         let totalOfLi=document.createElement('li');
@@ -144,7 +139,7 @@ let dubai = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -162,7 +157,7 @@ let dubai = {
         {
             let listItem=document.createElement('li');
             unorderedL.appendChild(listItem);
-            listItem.textContent=`${hours[i]} : ${this.randomCustomer[i]} : cookies`;
+            listItem.textContent=`${hours[i]} : ${this.randomAverage[i]} : cookies`;
             
         }
         let totalOfLi=document.createElement('li');
@@ -181,7 +176,7 @@ let paris = {
     name:'paris',
     minCustomer: 20, 
     maxCustomer: 38,
-    avgCookieSale: 23, 
+    avgCookieSale: 2.3, 
     randomCustomer: [], 
     randomAverage: [],
     total: 0,
@@ -199,7 +194,7 @@ let paris = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -218,7 +213,7 @@ let paris = {
         {
             let listItem=document.createElement('li');
             unorderedL.appendChild(listItem);
-            listItem.textContent=(`${hours[i]} : ${this.randomCustomer[i]} : cookies`);
+            listItem.textContent=(`${hours[i]} : ${this.randomAverage[i]} : cookies`);
             console.log(listItem);
         }
         let totalOfLi=document.createElement('li');
@@ -254,7 +249,7 @@ let lima = {
         {   let multiply= this.randomCustomer[i]*this.avgCookieSale;
             multiply=Math.floor(multiply);
             this.randomAverage.push(multiply);
-            this.total=this.total+this.randomCustomer[i];
+            this.total=this.total+this.randomAverage[i];
         //this.randomAverage.push(' the average is: ' + randomNumber(Math.floor(this.minCustomer * this.avgCookieSale), Math.floor(this.maxCustomer * this.avgCookieSale)));
         } 
         
@@ -287,7 +282,7 @@ lima.customerRandom();
 lima.avgCookies();
 lima.render();
 // seatle.seatleTotal();
-*/
+
 
 /*let tokyo = {
     minCustomer: 3, maxCustomer: 24, avgCookieSale: 1.2, randomCustomer: [], randomAverage: [],
