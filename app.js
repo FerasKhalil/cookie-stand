@@ -1,21 +1,22 @@
 'use strict';
-
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-let total=0;
-
+let stores=[];
 function MakingTables(name, minCustomer, maxCustomer, avgCookieSale)
 {
     this.name = name;
     this.minCustomer = minCustomer;
     this.maxCustomer = maxCustomer;
     this.avgCookieSale = avgCookieSale;
-    // this.randomCustomer=randomCustomer;
-    // this.randomAverage=randomAverage;
-    // this.total=total;
+    this.randomCustomer=[];
+    this.randomAverage=[];
+    this.total=total;
+    this.hourlyCookies=[];
+    stores.push(this);
+
 }
 
 MakingTables.prototype.randomCustomer= function ()
