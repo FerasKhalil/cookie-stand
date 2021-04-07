@@ -63,7 +63,7 @@ function headerMaker() {
   tableHeader.textContent = 'branch total';
 }
 
-
+// jsut
 
 function footerMaker() {
   let tableRow = document.createElement('tr');
