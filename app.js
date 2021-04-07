@@ -98,6 +98,31 @@ for (let i = 0; i < stores.length; i++) {
 footerMaker();
 
 
+let firstForm = document.getElementById("events");
+
+events.addEventListener('submit',submitter);
+function submitter(event)
+{
+    event.preventDefault();
+    let names = event.target.branch.value;
+    let minCustomers = (event.target.minimum.value);
+    let maxCustomers =( event.target.maximum.value);
+    let averageCookies =( event.target.average.value);
+
+
+    let userInput = new MakingTables(names, minCustomers, maxCustomers, averageCookies);
+    console.log(userInput);
+    table.textContent="";
+    headerMaker();
+    for(let i=0; i<stores.length; i++)
+    {
+        stores[i].multiply();
+        stores[i].render();
+
+    }
+footerMaker();
+}
+
 
 
 /*

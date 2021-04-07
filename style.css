@@ -4,23 +4,21 @@
 .image-holder
 {  
     padding : 10px;
-    margin-bottom: 20px ;
-    margin: 0 auto;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
+    border: solid black;
 }
-divers{
+.divers{
     background-color: black;
-    height: 80px;
+    height: 50px;
     text-align: right;
    
     /*overflow: hidden;*/
 }
 
-.ham{
+.salmon-logo{
 text-align: left;
-width: 70px;        
-border: 5px solid black;
+width: 70px;   
+height: 50px;     
+
 
 }
 img{
@@ -53,4 +51,9 @@ table,tr,th,td{
     border: 1px solid white;
     border-collapse:collapse;
     margin-top: 5%;
+}
+#open-hours
+{ 
+    /* text-align: center; */
+    float:right;
 }
