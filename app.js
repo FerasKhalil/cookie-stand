@@ -46,7 +46,9 @@ let table = document.createElement('th');
 main.appendChild(table);
 
 function headerMaker() {
-  let tableRow = document.createElement('tr');
+
+    let tableRow = document.createElement('tr');
+
   table.appendChild(tableRow);
   let tableH = document.createElement('th');
   tableRow.appendChild(tableH);
@@ -63,7 +65,7 @@ function headerMaker() {
   tableHeader.textContent = 'branch total';
 }
 
-// jsut
+// jsut aurn
 
 function footerMaker() {
   let tableRow = document.createElement('tr');
@@ -92,7 +94,9 @@ for (let i = 0; i < stores.length; i++) {
   stores[i].multiply();
   stores[i].render();
 }
+
 footerMaker();
+
 
 
 
