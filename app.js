@@ -35,7 +35,6 @@ MakingTables.prototype.render = function () {
     tableRow.appendChild(totalData);
     totalData.textContent = `${this.total}`;
   };
-
 let seattle = new MakingTables('seattle', 23, 65, 6.3);
 let tokyo = new MakingTables('tokyo', 3, 24, 1.2);
 let dubai = new MakingTables('dubai', 11, 38, 3.7);
@@ -43,11 +42,13 @@ let paris = new MakingTables('paris', 20, 38, 2.3);
 let lima = new MakingTables('lima', 2, 16, 4.6);
 
 let main = document.getElementById('tablers');
-let table = document.createElement('table');
+let table = document.createElement('th');
 main.appendChild(table);
 
-function makingHeader() {
-  let tableRow = document.createElement('tr');
+function headerMaker() {
+
+    let tableRow = document.createElement('tr');
+
   table.appendChild(tableRow);
   let tableH = document.createElement('th');
   tableRow.appendChild(tableH);
@@ -64,7 +65,9 @@ function makingHeader() {
   tableHeader.textContent = 'branch total';
 }
 
-function makingFoter() {
+// jsut aurn
+
+function footerMaker() {
   let tableRow = document.createElement('tr');
   table.appendChild(tableRow);
   let tableHead = document.createElement('th');
@@ -86,12 +89,14 @@ function makingFoter() {
   tableRow.appendChild(lastTableTotal);
   lastTableTotal.textContent=theTotal;
 }
-makingHeader();
+headerMaker();
 for (let i = 0; i < stores.length; i++) {
   stores[i].multiply();
   stores[i].render();
 }
-makingFoter();
+
+footerMaker();
+
 
 
 
