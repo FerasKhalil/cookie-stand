@@ -19,7 +19,7 @@ MakingTables.prototype.multiply = function () {
     this.total += Math.floor(this.cookieAverage[i]);
   }
 };
-//shopeRow = tableRow, nameTd=tableData, tdRow=dataRow, totalTd=totalData
+
 MakingTables.prototype.render = function () {
     let tableRow = document.createElement('tr');
     table.appendChild(tableRow);
