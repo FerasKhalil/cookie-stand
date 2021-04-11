@@ -41,17 +41,23 @@ let dubai = new MakingTables('dubai', 11, 38, 3.7);
 let paris = new MakingTables('paris', 20, 38, 2.3);
 let lima = new MakingTables('lima', 2, 16, 4.6);
 
+console.log(seattle+tokyo+dubai+paris+lima);
+
 let main = document.getElementById('tablers');
+console.log(main);
 let table = document.createElement('th');
+console.log(table);
 main.appendChild(table);
+console.log(table);
 
 function headerMaker() {
 
-    let tableRow = document.createElement('tr');
-
+  let tableRow = document.createElement('tr');
   table.appendChild(tableRow);
+console.log(tableRow);
   let tableH = document.createElement('th');
   tableRow.appendChild(tableH);
+    console.log(tableH);
   tableH.textContent = 'name';
 
   for (let i = 0; i < hours.length; i++) {
@@ -105,12 +111,12 @@ function submitter(event)
 {
     event.preventDefault();
     let names = event.target.branch.value;
-    let minCustomers = (event.target.minimum.value);
-    let maxCustomers =( event.target.maximum.value);
-    let averageCookies =( event.target.average.value);
-
-
+    let minCustomers = event.target.minimum.value;
+    let maxCustomers = event.target.maximum.value;
+    let averageCookies = event.target.average.value;
+    
     let userInput = new MakingTables(names, minCustomers, maxCustomers, averageCookies);
+
     console.log(userInput);
     table.textContent="";
     headerMaker();
